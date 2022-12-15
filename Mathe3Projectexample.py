@@ -77,7 +77,6 @@ with st.spinner('Preparing Visuals and calculating Regression Model'):  #The wit
         print('R2_score (test): ', r2_score_rf_test)
         print("RMSE: ", rmse_rf)
 
-    @st.experimental_memo                                                   #chaces the upcoming function so it doesnt have to be recalculated 
     def crossvalidation():                                                  #defines a function called corssvalidation 
         corr = dataset.corr()                                               #defines a variable called corr that makes use of the dataset 
         #Plot figsize
@@ -93,7 +92,6 @@ with st.spinner('Preparing Visuals and calculating Regression Model'):  #The wit
         #sns.pairplot(dataset)
         #plt.show()
 
-    @st.experimental_memo                                                   #chaces the upcoming function so it doesnt have to be recalculated 
     def streamlit():                                                        #defines a funtion called streamlit 
         # Streamlit part
         st.title('Random forest regression model for housing prices')       #Writes a lot into streamlit 
