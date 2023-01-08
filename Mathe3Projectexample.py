@@ -49,7 +49,12 @@ with st.spinner('Preparing Visuals and calculating Regression Model'):  #The wit
         from sklearn.ensemble import RandomForestRegressor                  #Imports the Random Forest Regressor 
         #Selected best fitting arguments as listed in https://towardsdatascience.com/predicting-housing-prices-using-a-scikit-learns-random-forest-model-e736b59d56c5
         global regressor_rf                                                 #defines the variable regressor_rf 
-        regressor_rf = RandomForestRegressor(n_estimators = 640, random_state = 0, min_samples_leaf=1, max_features=0.5, bootstrap=False) #defines the variable to be the Random Forest Regressor 
+        regressor_rf = RandomForestRegressor(n_estimators = 640, random_state = 0, min_samples_leaf=1, max_features=0.5, bootstrap=False) #defines the variable to be the Random Forest Regressor. 
+        #n_estimators: The number of trees in the forest. In this case, the value is 640.
+        #random_state: The seed used by the random number generator. In this case, the value is 0.
+        #min_samples_leaf: The minimum number of samples required to be at a leaf node. In this case, the value is 1.
+        #max_features: The maximum number of features to consider when looking for the best split. In this case, the value is 0.5, which means that the algorithm will consider 50% of the features at each split.
+        #bootstrap: Whether or not to use bootstrapped samples when building trees. In this case, the value is False, which means that bootstrapping will not be used.
         regressor_rf.fit(X_train, y_train.ravel())                                                                                        #Fits the train values to the regressor 
 
         from sklearn.metrics import r2_score                                #imports the module r2 score 
